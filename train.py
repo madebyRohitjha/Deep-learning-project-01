@@ -27,3 +27,19 @@ plt.axis("off")
 plt.show()
 X_train = X_train / 255.0
 X_test = X_test / 255.0
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(28, 28)),
+    tf.keras.layers.Dense(128, activation="relu"),
+    tf.keras.layers.Dense(10, activation="softmax")
+
+model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+)
+model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+)
