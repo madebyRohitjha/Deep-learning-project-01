@@ -1,13 +1,6 @@
-import tensorflow as tf
-from tensorflow.keras.datasets import mnist
-
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
 
 
-print(X_train.shape)
-print(X_test.shape)
 
-print(y_train[0])
 
 import tensorflow as tf
 from tensorflow.keras.datasets import mnist
@@ -32,14 +25,14 @@ model = tf.keras.Sequential([
     tf.keras.layers.Flatten(input_shape=(28, 28)),
     tf.keras.layers.Dense(128, activation="relu"),
     tf.keras.layers.Dense(10, activation="softmax")
-
+])
 model.compile(
     optimizer="adam",
     loss="sparse_categorical_crossentropy",
     metrics=["accuracy"]
 )
-model.compile(
-    optimizer="adam",
-    loss="sparse_categorical_crossentropy",
-    metrics=["accuracy"]
+history = model.fit(
+    X_train,
+    y_train,
+    epochs=10
 )
