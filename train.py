@@ -36,3 +36,12 @@ history = model.fit(
     y_train,
     epochs=10
 )
+
+test_loss, test_accuracy = model.evaluate(X_test, y_test)
+
+print("Test Loss:", test_loss)
+print("Test Accuracy:", test_accuracy)
+plt.imshow(X_train[0], cmap="gray")
+plt.title(f"Label: {y_train[0]}")
+plt.axis("off")
+plt.show()
