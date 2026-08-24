@@ -16,3 +16,10 @@ predicted_digit = prediction.argmax()
 
 print("Predicted Digit:", predicted_digit)
 print("Actual Digit:", y_test[0])
+
+print("Predicted Digit:", predicted_digit)
+print("Actual Digit:", y_test[0])
+
+confidence = prediction.max() * 100
+
+print(f"Confidence: {confidence:.2f}%")
