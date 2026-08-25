@@ -10,16 +10,15 @@ print("Model loaded successfully!")
 
 X_test = X_test / 255.0
 
-prediction = model.predict(X_test[0].reshape(1, 28, 28))
+
+image_index = 123
+
+prediction = model.predict(X_test[image_index].reshape(1, 28, 28), verbose=0)
 
 predicted_digit = prediction.argmax()
 
 print("Predicted Digit:", predicted_digit)
-print("Actual Digit:", y_test[0])
-
-print("Predicted Digit:", predicted_digit)
-print("Actual Digit:", y_test[0])
+print("Actual Digit:", y_test[image_index])
 
 confidence = prediction.max() * 100
-
 print(f"Confidence: {confidence:.2f}%")
