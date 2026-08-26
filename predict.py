@@ -1,3 +1,4 @@
+import random
 import tensorflow as tf
 
 from tensorflow.keras.datasets import mnist
@@ -11,7 +12,7 @@ print("Model loaded successfully!")
 X_test = X_test / 255.0
 
 
-image_index = 123
+image_index = random.randint(0, 9999)
 
 prediction = model.predict(X_test[image_index].reshape(1, 28, 28), verbose=0)
 
