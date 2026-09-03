@@ -47,3 +47,11 @@ plt.axis("off")
 plt.show()
 
 model.save("mnist_ann.keras")
+
+model.compile(
+    optimizer="adam",
+    loss="sparse_categorical_crossentropy",
+    metrics=["accuracy"]
+)
+
+model.summary()
