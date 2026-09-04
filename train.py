@@ -34,7 +34,7 @@ model.compile(
 history = model.fit(
     X_train,
     y_train,
-    epochs=10
+    epochs=20
 )
 
 test_loss, test_accuracy = model.evaluate(X_test, y_test)
